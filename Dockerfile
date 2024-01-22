@@ -2,12 +2,16 @@
 FROM python:3.10-slim-buster
 
 # Set the working directory in the container
+WORKDIR /src
+
+copy ./analytics/requirements.txt requirements.txt
 
 # Copy all files from the local ./analytics directory to the container's /app directory
-copy .. .
 
 # Install dependencies
-RUN pip install -r analytics/requirements.txt
+RUN pip install -r requirements.txt
+
+copy ../ .
 
 # Set Database environment variables
 ARG DB_USERNAME=$DB_USERNAME
