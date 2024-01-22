@@ -11,7 +11,8 @@ copy ./analytics/requirements.txt requirements.txt
 # Install dependencies
 RUN pip install -r requirements.txt
 
-copy ./db .
+copy ./analytics . && \
+    copy ./db .
 
 
 # Set Database environment variables
