@@ -2,10 +2,9 @@
 FROM python:3.10-slim-buster
 
 # Set the working directory in the container
-WORKDIR /app
 
 # Copy all files from the local ./analytics directory to the container's /app directory
-copy .. /app
+copy .. .
 
 # Install dependencies
 RUN pip install -r analytics/requirements.txt
