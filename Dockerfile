@@ -11,7 +11,9 @@ copy ./analytics/requirements.txt requirements.txt
 # Install dependencies
 RUN pip install -r requirements.txt
 
-copy .. .
+copy ./analytics . && \
+    copy ./db .
+
 
 # Set Database environment variables
 ARG DB_USERNAME=$DB_USERNAME
