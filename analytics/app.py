@@ -12,8 +12,20 @@ from config import app, db
 
 port_number = int(os.environ.get("APP_PORT", 5153))
 
+@app.route("/")
+def hello():
+    return "App is running"
 
-@app.route("/health_check")
+@app.route("/check")
+def env_check():
+    db_username = os.environ["DB_USERNAME"]
+    db_password = os.environ["DB_PASSWORD"]
+    cred ={"username" , db_username,
+           "password", db_password }
+    return db_username
+
+
+@app.route("/health_check",  methods=["GET"])
 def health_check():
     return "ok"
 
@@ -77,9 +89,9 @@ def all_user_visits():
     return jsonify(response)
 
 
-scheduler = BackgroundScheduler()
-job = scheduler.add_job(get_daily_visits, 'interval', seconds=30)
-scheduler.start()
+# scheduler = BackgroundScheduler()
+# job = scheduler.add_job(get_daily_visits, 'interval', seconds=30)
+# scheduler.start()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=port_number)
