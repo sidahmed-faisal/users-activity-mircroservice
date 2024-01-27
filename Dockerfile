@@ -8,11 +8,11 @@ COPY ./analytics/requirements.txt requirements.txt
 
 # Copy all files from the local ./analytics directory to the container's /app directory
 
+COPY ./analytics . && \
+    copy ./db ./
+
 # Install dependencies
 RUN pip install -r requirements.txt
-
-COPY ./analytics ./ && \
-    copy ./db ./
 
 
 # Set Database environment variables
