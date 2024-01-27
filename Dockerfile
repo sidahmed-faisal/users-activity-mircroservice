@@ -22,7 +22,7 @@ ENV DB_USERNAME $DB_USERNAME
 ENV DB_PASSWORD $DB_PASSWORD
 
 # Run the application
-CMD ["python", "analytics/app.py"]
+CMD ["python", "app.py"]
 
 
 
