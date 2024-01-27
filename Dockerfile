@@ -1,5 +1,5 @@
 # Use base image 
-FROM python:3.10-slim-buster
+FROM python:alpine3.19
 
 # Set the working directory in the container
 WORKDIR /src
