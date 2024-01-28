@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app-api
-        image: 391500738953.dkr.ecr.us-east-1.amazonaws.com/usersmicro:20
+        image: 391500738953.dkr.ecr.us-east-1.amazonaws.com/usersmicro:22
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -30,6 +30,13 @@ spec:
             port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: "700m"
+            memory: "256Mi"
+          requests:
+            cpu: "500m"
+            memory: "128Mi"
         env:
         - name: DB_USERNAME
           valueFrom:
