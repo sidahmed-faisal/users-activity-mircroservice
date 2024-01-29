@@ -29,6 +29,7 @@ helm repo add <REPO_NAME> https://charts.bitnami.com/bitnami
 2. Install PostgreSQL Helm Chart
 ```
 helm install <SERVICE_NAME> <REPO_NAME>/postgresql
+```
 * example :
 ```
 helm install my-postgresamespacql2 bitnami/postgresql --set primary.persistence.enabled=false
