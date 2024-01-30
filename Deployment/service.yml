@@ -10,3 +10,4 @@ spec:
     protocol: TCP
     port: 5153
     targetPort: 5153
+  type: Load 
