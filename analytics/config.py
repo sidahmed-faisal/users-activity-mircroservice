@@ -4,6 +4,7 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+postgres_pass=os.environ["POSTGRES_PASSWORD"]
 db_username = os.environ["DB_USERNAME"]
 db_password = os.environ["DB_PASSWORD"]
 db_host = os.environ.get("DB_HOST", "127.0.0.1")
