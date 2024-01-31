@@ -4,7 +4,7 @@ The Coworking Space Service is a set of APIs that enables users to request one-t
  The API provides business analysts basic analytics data on user activity in the service. The application is deployed to Kubernetes **Cluster** with a Postgres Deployment using **Helm Charts**.
 
 ### Diagram of the Infrastructure
-![Infrastructure-Diagram](/Diagram%20and%20Deployment%20Screenshots/Infrastructure%20Diagram.png)
+![Infrastructure-Diagram](/DeploymentScreenshots/Diagram.png)
 
  ### Dependencies
 #### Local Environment
